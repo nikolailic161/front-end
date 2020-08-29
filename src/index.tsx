@@ -13,13 +13,19 @@ import { HashRouter, Route } from 'react-router-dom';
 import Switch from 'react-bootstrap/esm/Switch';
 import ContactPage from './components/ContactPage/ContactPage';
 import KorisnikLoginPage from './components/KorisnikLoginPage/KorisnikLoginPage';
+import CategoryPage from './components/CategoryPage/CategoryPage';
 
 
 const menuItems=[
   new MainMenuItem("Home","/"),
-  new MainMenuItem("O nama","/o nama"),
   new MainMenuItem("Contact","/contact"),
   new MainMenuItem("Log in","/korisnik/login"),
+
+  new MainMenuItem("Kat 1","/kategorija/1/"),
+  new MainMenuItem("Kat 2","/kategorija/2/"),
+  new MainMenuItem("Kat 3","/kategorija/3/"),
+
+  
 ];
 ReactDOM.render(
   <React.StrictMode>
@@ -29,7 +35,7 @@ ReactDOM.render(
         <Route exact path = "/" component = { HomePage }/>
         <Route exact path = "/contact" component = {ContactPage} />
         <Route exact path = "/korisnik/login" component = {KorisnikLoginPage} />
-
+        <Route exact path = "/kategorija/:cId" component = {CategoryPage} />
       </Switch>
     </HashRouter>
   </React.StrictMode>,
