@@ -29,16 +29,16 @@ export default class CategoryPage extends React.Component<CategoryPageProperties
     render(){
         return(
             <Container>
-            <Card>
-                <Card.Body>
-                    <Card.Title>
-        <FontAwesomeIcon icon = {faListAlt} /> {this.state.category?.ime} Kontakt detalji
+                <Card>
+                    <Card.Body>
+                        <Card.Title>
+                            <FontAwesomeIcon icon = {faListAlt} /> {this.state.category?.ime} Kontakt detalji
                     </Card.Title>
-                    <Card.Text>
+                     <  Card.Text>
                         Artikli 
-                    </Card.Text>
-                </Card.Body>
-            </Card>           
+                        </Card.Text>
+                     </Card.Body>
+                 </Card>           
             </Container>
 
         );

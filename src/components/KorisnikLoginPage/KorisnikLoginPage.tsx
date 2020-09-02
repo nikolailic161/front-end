@@ -13,7 +13,7 @@ interface KorisnikLoginPageState{
 }
 
 
-export default class KorisnikLoginPage extends React.Component{
+export class KorisnikLoginPage extends React.Component{
    state: KorisnikLoginPageState;
    constructor(props: Readonly<{}>){
        super(props);
@@ -31,17 +31,21 @@ export default class KorisnikLoginPage extends React.Component{
         });
             this.setState(newState);
    }
-   private setLogginState(isLoggedIn: boolean) {
+
+   
+   private setErrorMessage(message: string) {
     const newState = Object.assign(this.state, {
-        isLoggedIn: isLoggedIn,
+        errorMessage: message,
     });
 
     this.setState(newState);
 }
 
-    private setErrorMessage(message: string) {
+
+
+   private setLogginState(isLoggedIn: boolean) {
     const newState = Object.assign(this.state, {
-        errorMessage: message,
+        isLoggedIn: isLoggedIn,
     });
 
     this.setState(newState);
@@ -56,7 +60,7 @@ export default class KorisnikLoginPage extends React.Component{
        })
        .then((res: ApiResponse) => {
             if (res.status === 'error') {
-                this.setErrorMessage('System error... Try again!');
+                console.log(res.data)
 
                 return;
             }

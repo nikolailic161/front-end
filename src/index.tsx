@@ -12,9 +12,11 @@ import { MainMenu, MainMenuItem } from './components/MainMenu/MainMenu';
 import { HashRouter, Route } from 'react-router-dom';
 import Switch from 'react-bootstrap/esm/Switch';
 import ContactPage from './components/ContactPage/ContactPage';
-import KorisnikLoginPage from './components/KorisnikLoginPage/KorisnikLoginPage';
+
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import { KorisnikRegistrationPage } from './components/KorisnikRegistrationPage/KorisnikRegistrationPage';
+import KorpaPage from './components/KorpaPage/KorpaPage';
+import { KorisnikLoginPage } from './components/KorisnikLoginPage/KorisnikLoginPage';
 
 
 const menuItems=[
@@ -22,10 +24,7 @@ const menuItems=[
   new MainMenuItem("Contact","/contact"),
   new MainMenuItem("Log in","/korisnik/login"),
   new MainMenuItem("Register","/korisnik/register"),
-  new MainMenuItem("Kat 1","/kategorija/1/"),
-  new MainMenuItem("Kat 2","/kategorija/2/"),
-  new MainMenuItem("Kat 3","/kategorija/3/"),
-
+  new MainMenuItem("Korpa","/korisnik/korpa"),
   
 ];
 ReactDOM.render(
@@ -38,6 +37,7 @@ ReactDOM.render(
         <Route exact path = "/korisnik/login" component = {KorisnikLoginPage} />
         <Route exact path = "/korisnik/register" component = {KorisnikRegistrationPage} />
         <Route exact path = "/kategorija/:cId" component = {CategoryPage} />
+        <Route exact path = "/korpa/" component = {KorpaPage} />
       </Switch>
     </HashRouter>
   </React.StrictMode>,

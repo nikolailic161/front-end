@@ -19,6 +19,8 @@ export default function api(
             },
         };
 
+     
+     
         axios(requestData)
         .then(res => responseHandler(res, resolve))
         .catch(async err => {
@@ -27,12 +29,13 @@ export default function api(
     
                 if (!newToken) {
                     const response: ApiResponse = {
-                        status: 'login',
+                        status: 'login',    
                         data: null,
                     };
             
                     return resolve(response);
                 }
+    
     
                 saveToken(role, newToken);
     
